@@ -21,7 +21,7 @@ requirements:
     - ninja-base
   host:
     - aws-c-common 0.8.5
-    - openssl {{ openssl }}
+    - openssl {{ openssl }}  # [not win and not osx]
 
 test:
   requires:
