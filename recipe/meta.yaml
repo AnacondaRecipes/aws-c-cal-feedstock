@@ -1,5 +1,5 @@
 {% set name = "aws-c-cal" %}
-{% set version = "0.5.20" %}
+{% set version = "0.8.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/awslabs/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: acc352359bd06f8597415c366cf4ec4f00d0b0da92d637039a73323dd55b6cd0
+  sha256: 1fb758946e578bd675b5316cff0417b7f89b1b46d9dd1562e8e22db85748973c
 
 build:
   number: 0
@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - ninja-base
   host:
-    - aws-c-common 0.8.5
+    - aws-c-common 0.11.1
     - openssl {{ openssl }}  # [not win and not osx]
 
 test:
