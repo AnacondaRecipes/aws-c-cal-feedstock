@@ -1,5 +1,5 @@
 {% set name = "aws-c-cal" %}
-{% set version = "0.8.5" %}
+{% set version = "0.9.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/awslabs/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 1fb758946e578bd675b5316cff0417b7f89b1b46d9dd1562e8e22db85748973c
+  sha256: f9f3bc6a069e2efe25fcdf73e4d2b16b5608c327d2eb57c8f7a8524e9e1fcad0
 
 build:
   number: 0
@@ -16,12 +16,12 @@ build:
 
 requirements:
   build:
-    - cmake !=3.19.0,!=3.19.1
     - {{ compiler('c') }}
-    - ninja-base
+    - cmake
+    - ninja
   host:
     - aws-c-common 0.11.1
-    - openssl {{ openssl }}  # [not win and not osx]
+    - openssl {{ openssl }}  # [linux]
 
 test:
   requires:
@@ -51,8 +51,8 @@ about:
   license_file: LICENSE
   summary: 'Aws Crypto Abstraction Layer'
   description: 'AWS Crypto Abstraction Layer: Cross-Platform, C99 wrapper for cryptography primitives.'
-  dev_url: https://github.com/awslabs/aws-c-cal/
-  doc_url: https://github.com/awslabs/aws-c-cal/
+  dev_url: https://github.com/awslabs/aws-c-cal
+  doc_url: https://github.com/awslabs/aws-c-cal
 
 extra:
   recipe-maintainers:
