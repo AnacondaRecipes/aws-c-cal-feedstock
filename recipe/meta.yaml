@@ -20,7 +20,7 @@ requirements:
     - cmake
     - ninja-base
   host:
-    - aws-c-common >=0.12.3
+    - aws-c-common 0.12.3
     - openssl {{ openssl }}  # [linux]
 
 test:
