@@ -18,10 +18,10 @@ requirements:
   build:
     - {{ compiler('c') }}
     - cmake
-    - ninja
+    - ninja-base
   host:
-    - aws-c-common 0.11.1
-    - openssl {{ openssl }}  # [linux]
+    - aws-c-common >=0.12.3
+    - openssl {{ openssl }}
 
 test:
   requires:
@@ -36,7 +36,7 @@ test:
   commands:
     - test -f $PREFIX/lib/libaws-c-cal${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/aws/cal/cal.h  # [unix]
-    - if not exist %LIBRARY_INC%\\aws\\cal\\cal.h exit 1          # [win]
+    - if not exist %LIBRARY_INC%\\aws\\cal\\cal.h exit 1  # [win]
     - if not exist %PREFIX%\\Library\\bin\\aws-c-cal.dll exit 1  # [win]
 
     # CMake integration
@@ -49,8 +49,8 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'Aws Crypto Abstraction Layer'
-  description: 'AWS Crypto Abstraction Layer: Cross-Platform, C99 wrapper for cryptography primitives.'
+  summary: Aws Crypto Abstraction Layer
+  description: AWS Crypto Abstraction Layer: Cross-Platform, C99 wrapper for cryptography primitives.
   dev_url: https://github.com/awslabs/aws-c-cal
   doc_url: https://github.com/awslabs/aws-c-cal
 
