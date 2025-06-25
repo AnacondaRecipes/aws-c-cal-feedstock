@@ -21,7 +21,7 @@ requirements:
     - ninja-base
   host:
     - aws-c-common >=0.12.3
-    - openssl {{ openssl }}
+    - openssl {{ openssl }}  # [linux]
 
 test:
   requires:
@@ -50,7 +50,8 @@ about:
   license_family: Apache
   license_file: LICENSE
   summary: Aws Crypto Abstraction Layer
-  description: AWS Crypto Abstraction Layer: Cross-Platform, C99 wrapper for cryptography primitives.
+  description: |
+    AWS Crypto Abstraction Layer: Cross-Platform, C99 wrapper for cryptography primitives.
   dev_url: https://github.com/awslabs/aws-c-cal
   doc_url: https://github.com/awslabs/aws-c-cal
 
