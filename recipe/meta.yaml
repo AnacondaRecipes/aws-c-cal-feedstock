@@ -10,17 +10,18 @@ source:
   sha256: f9f3bc6a069e2efe25fcdf73e4d2b16b5608c327d2eb57c8f7a8524e9e1fcad0
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("aws-c-cal", max_pin="x.x.x") }}
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - cmake >=3.9
     - ninja-base
   host:
-    - aws-c-common 0.12.3
+    - aws-c-common 0.12.4
     - openssl {{ openssl }}  # [linux]
 
 test:
@@ -36,8 +37,8 @@ test:
   commands:
     - test -f $PREFIX/lib/libaws-c-cal${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/aws/cal/cal.h  # [unix]
-    - if not exist %LIBRARY_INC%\\aws\\cal\\cal.h exit 1  # [win]
-    - if not exist %PREFIX%\\Library\\bin\\aws-c-cal.dll exit 1  # [win]
+    - if not exist %LIBRARY_INC%\aws\cal\cal.h exit 1  # [win]
+    - if not exist %LIBRARY_BIN%\aws-c-cal.dll exit 1  # [win]
 
     # CMake integration
     - cd cmake_test
