@@ -10,7 +10,7 @@ source:
   sha256: 80b7c6087b0af461b4483e4c9483aea2e0dac5d9fb2289b057159ea6032409e1
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage("aws-c-cal", max_pin="x.x.x") }}
 
@@ -21,8 +21,8 @@ requirements:
     - cmake >=3.9
     - ninja-base
   host:
-    - aws-c-common 0.12.4
-    - openssl {{ openssl }}  # [linux]
+    - aws-c-common 0.12.6
+    - openssl {{ openssl }} # [linux]
 
 test:
   requires:

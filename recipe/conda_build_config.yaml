@@ -1,0 +1,4 @@
+c_stdlib_version: # [win]
+  - 2022.12       # [win]
+c_compiler:       # [win]
+  - vs2022        # [win]
