@@ -21,7 +21,7 @@ requirements:
     - cmake >=3.9
     - ninja-base
   host:
-    - aws-c-common 0.12.6
+    - aws-c-common 0.13.1
     - openssl {{ openssl }} # [linux]
 
 test:
