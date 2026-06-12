@@ -1,13 +1,13 @@
 {% set name = "aws-c-cal" %}
-{% set version = "0.9.13" %}
+{% set version = "0.9.14" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://github.com/awslabs/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 80b7c6087b0af461b4483e4c9483aea2e0dac5d9fb2289b057159ea6032409e1
+  sha256: 0e96e0067fa921768e07b5b4ebad82011ccf474903e9286419ef428d68f317ea
 
 build:
   number: 0
@@ -21,7 +21,7 @@ requirements:
     - cmake >=3.9
     - ninja-base
   host:
-    - aws-c-common 0.12.6
+    - aws-c-common 0.14.0
     - openssl {{ openssl }} # [linux]
 
 test:
@@ -30,7 +30,7 @@ test:
     # https://discourse.cmake.org/t/questions-about-find-package-cli-msvc/6194
     - {{ compiler('c') }}
     - cmake
-    - ninja
+    - ninja-base
     - pkg-config
   files:
     - cmake_test/
