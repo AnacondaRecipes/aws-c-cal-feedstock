@@ -21,7 +21,7 @@ requirements:
     - cmake >=3.9
     - ninja-base
   host:
-    - aws-c-common 0.12.6
+    - aws-c-common 0.14.0
     - openssl {{ openssl }} # [linux]
 
 test:
@@ -30,7 +30,7 @@ test:
     # https://discourse.cmake.org/t/questions-about-find-package-cli-msvc/6194
     - {{ compiler('c') }}
     - cmake
-    - ninja
+    - ninja-base
     - pkg-config
   files:
     - cmake_test/
